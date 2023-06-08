@@ -31,10 +31,12 @@ for i in items:
     if ext == ""or ext ==".text":
         pass
     elif ext in list(reverseddic.keys()):
-        print("move to folder "+ reverseddic.get(ext))
+        print("moving to  folder "+ reverseddic.get(ext))
+        print()
         shutil.move(folderaddr + "/" + i, folderaddr + "/"+reverseddic.get(ext)+"/" + i)
     else: 
-        print("move to docs")
+        print("moveing file to docs")
+        print()
         shutil.move(folderaddr + "/" + i, folderaddr + "/documents/" + i)
 
 print("─────────────────────────────────────────────────────────────────────────────────────────────────────────")

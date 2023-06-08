@@ -1,0 +1,7 @@
+{
+    "compresed": [".zip",".rar"],
+    "images": [".png",".jpg"],
+    "videos": [".mp4",".mkv"],
+    "musics": [".m4a",".mp3"],
+    "documents": ["else"]
+}
