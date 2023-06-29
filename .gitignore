@@ -1,2 +1,8 @@
-__pycache__
+#app stuff
 FileSorter_settings.text
+#python  stuff
+__pycache__
+# pyinstaller stuff
+build
+dist
+fileSorter.spec
