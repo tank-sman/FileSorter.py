@@ -6,3 +6,5 @@ __pycache__
 build
 dist
 fileSorter.spec
+# py to exe stuff
+output
