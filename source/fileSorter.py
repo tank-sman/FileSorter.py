@@ -1,7 +1,8 @@
 import os
-import shutil
+import shutil,time
 from readSetting import *
 from tkinter import *
+
 
 tk=Tk()
 tk.configure(background='#666666')
@@ -9,6 +10,7 @@ path=StringVar(tk)
 
 tk.title("File Sorter")
 tk.geometry("600x600")
+logdata=""
 # folderaddr = input("enter folder path: ")
 def run():
     folderaddr=path.get()
@@ -40,10 +42,12 @@ def run():
         elif ext in list(reverseddic.keys()):
             print("moving to  folder "+ reverseddic.get(ext))
             print()
+            logdata+=str(i)+"moving to  folder "+ reverseddic.get(ext)
             shutil.move(folderaddr + "/" + i, folderaddr + "/"+reverseddic.get(ext)+"/" + i)
         else: 
             print("moveing file to docs")
             print()
+            logdata+=str(i)+"moving to  folder "+ reverseddic.get(ext)
             shutil.move(folderaddr + "/" + i, folderaddr + "/documents/" + i)
     unname=Label(tk,text="Done!")
     unname.configure(background='#666666',fg="#eeeeee",font=('sans-serif', 15))
@@ -62,6 +66,8 @@ b1.pack()
 # print("─────────────────────────────────────────────────────────────────────────────────────────────────────────")
 print("Done!")
 tk.mainloop()
+with open(f"SorterData/log-{time.ctime()}","x") as log:
+    log.write(logdata)
 print("─────────────────────────────────────────────────────────────────────────────────────────────────────────")
 print("Made By Tank Sman \nTelegram :")
 print("   __                             __   __                     __")
